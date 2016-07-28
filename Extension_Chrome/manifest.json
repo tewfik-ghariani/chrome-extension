@@ -1,0 +1,37 @@
+{
+  "name": "Analyzing comments associated to a post online",
+  "description": "This is still in a test phase. Errors may occur so remain patient. Thanks",
+  "version": "0.1",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage"
+
+
+  ],
+
+
+  "icons": { "16": "img/3.png",
+           "48": "img/2.png",
+          "128": "img/1.png" },
+ "background": {
+    "persistent": true,
+    "scripts": ["background.js","thirdParty/jquery-2.1.4.min.js"]
+  },
+"content_scripts": [{
+        "matches": ["*://*.facebook.com/*/posts/*","*://*.facebook.com/*/videos/*","*://*.facebook.com/*/photos/*","*://*.facebook.com/photo.php*"],
+        "js":      ["content.js"]
+
+    }],
+
+  "browser_action": {
+    "default_title": "Choose a post",
+    "default_popup": "popup.html",
+    "default_icon": {          
+            "19": "img/favicon.png"    
+          }
+
+  },
+
+  "manifest_version": 2
+}
